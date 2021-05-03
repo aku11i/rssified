@@ -10,7 +10,6 @@ export type SiteInfo = {
 export type Article = {
   title: string;
   description: string;
-  content: string;
   image?: string;
   link: string;
   date: Date;
