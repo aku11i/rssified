@@ -1,5 +1,5 @@
 import { getHrefs, getPageInfo } from "../lib/query.js";
-import type { Site } from "../types";
+import type { Article, Site } from "../types";
 import { getSiteName } from "../helpers/getSiteName.js";
 import { getArticleFromOgp } from "../helpers/getArticleFromOgp.js";
 
@@ -40,9 +40,13 @@ const getArticles: Site["getArticles"] = async (props) => {
 
   await page.close();
 
-  const urls = links.map((_) => new URL(_, ORIGIN).href);
+  const urls = links.map((_) => new URL(_, ORIGIN).href).reverse();
 
-  const articles = await Promise.all(urls.map((_) => getArticleFromOgp(_)));
+  const articles: Article[] = [];
+  for (const _ of urls) {
+    const article = await getArticleFromOgp(_);
+    articles.push(article);
+  }
 
   return articles;
 };
