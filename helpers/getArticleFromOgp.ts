@@ -5,10 +5,16 @@ import type { OpenGraphImage } from "open-graph-scraper";
 export const getArticleFromOgp = async (url: string): Promise<Article> => {
   const ogp = await getOgp(url);
 
+  const image = (ogp.ogImage as OpenGraphImage).url;
+
+  const description =
+    `<img src="${image}"><br>` +
+    (ogp.ogDescription?.replace(/\n/g, "<br>") || "");
+
   return {
     title: ogp.ogTitle || "",
-    description: ogp.ogDescription?.replace(/\n/g, "<br>") || "",
-    image: (ogp.ogImage as OpenGraphImage).url,
+    description,
+    image,
     link: url,
     date: new Date(),
   };
