@@ -14,7 +14,7 @@ export type GenerateFeedProps = {
 };
 
 export const generateFeed = async (props: GenerateFeedProps): Promise<void> => {
-  console.log(props.site.url);
+  console.log("[START]", props.site.url);
 
   const { site, browser } = props;
   const info = await site.getInfo({
@@ -46,5 +46,6 @@ export const generateFeed = async (props: GenerateFeedProps): Promise<void> => {
 
   const dist = path.join(DIST, `${site.name}.rss`);
   await fs.writeFile(dist, feed.rss2());
-  console.log(dist);
+  console.log("[SAVE]", dist);
+  console.log("[FINISH]", props.site.url);
 };
