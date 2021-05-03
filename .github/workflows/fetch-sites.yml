@@ -3,6 +3,8 @@ name: Fetch Sites
 on:
   push:
     branches: [master]
+  schedule:
+    - cron: "20,50 * * * *"
 
 jobs:
   fetch:
