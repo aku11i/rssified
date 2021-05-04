@@ -21,4 +21,5 @@ const queue = new PQueue({ concurrency: 1 });
   if (results.some((_) => _.status === "rejected")) {
     process.exit(1);
   }
+  process.exit(0);
 })();
