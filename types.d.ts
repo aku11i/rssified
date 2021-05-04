@@ -1,5 +1,3 @@
-import type { Browser, Page } from "puppeteer";
-
 export type SiteInfo = {
   title: string;
   description: string;

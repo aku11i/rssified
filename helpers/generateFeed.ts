@@ -39,7 +39,9 @@ export const generateFeed = async (props: GenerateFeedProps): Promise<void> => {
     });
   });
 
-  await fs.mkdir(DIST).catch(() => {} /* nop */);
+  await fs.mkdir(DIST).catch(() => {
+    /* nop */
+  });
 
   const dist = path.join(DIST, `${site.name}.rss`);
   await fs.writeFile(dist, feed.rss2());

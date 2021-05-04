@@ -14,18 +14,18 @@ export const getPageInfo = async (page: Page): Promise<PageInfo> => {
   return { title, description };
 };
 
-export const getHref = (element: Element) => {
+export const getHref = (element: Element): string => {
   return element.getAttribute("href") ?? "";
 };
 
-export const getHrefs = (elements: Element[]) => {
+export const getHrefs = (elements: Element[]): string[] => {
   return elements.map((el) => el.getAttribute("href") ?? "");
 };
 
-export const getSrc = (element: Element) => {
+export const getSrc = (element: Element): string | undefined => {
   return element.getAttribute("src") ?? undefined;
 };
 
-export const getText = (element: Element) => {
+export const getText = (element: Element): string | undefined => {
   return (element as HTMLElement).innerText ?? "";
 };
