@@ -1,4 +1,4 @@
-name: Fetch Sites
+name: generate-feed
 
 on:
   push:
