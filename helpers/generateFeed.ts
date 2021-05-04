@@ -1,8 +1,7 @@
-import type { Site } from "../types";
+import type { Article, Site, SiteInfo } from "../types";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import feed from "../deps/feed.js";
-import { fetchWebsite } from "./fetchWebsite.js";
 
 const { Feed } = feed;
 
@@ -10,14 +9,12 @@ const DIST = path.resolve(process.cwd(), "dist");
 
 export type GenerateFeedProps = {
   site: Site;
+  info: SiteInfo;
+  articles: Article[];
 };
 
 export const generateFeed = async (props: GenerateFeedProps): Promise<void> => {
-  console.log("[START]", props.site.url);
-
-  const { site } = props;
-
-  const { info, articles } = await fetchWebsite({ site });
+  const { site, info, articles } = props;
 
   const feed = new Feed({
     title: info.title,
@@ -46,5 +43,4 @@ export const generateFeed = async (props: GenerateFeedProps): Promise<void> => {
   const dist = path.join(DIST, `${site.name}.rss`);
   await fs.writeFile(dist, feed.rss2());
   console.log("[SAVE]", dist);
-  console.log("[FINISH]", props.site.url);
 };
