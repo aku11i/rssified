@@ -7,6 +7,7 @@
     "rootDir": ".",
     "noEmit": true,
     "isolatedModules": true,
+    "resolveJsonModule": true,
     "strict": true,
     "moduleResolution": "Node",
     "skipLibCheck": true,

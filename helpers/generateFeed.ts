@@ -2,6 +2,7 @@ import type { Site } from "../types";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import feed from "../deps/feed.js";
+import { fetchWebsite } from "./fetchWebsite.js";
 
 const { Feed } = feed;
 
@@ -16,8 +17,7 @@ export const generateFeed = async (props: GenerateFeedProps): Promise<void> => {
 
   const { site } = props;
 
-  const info = await site.getInfo();
-  const articles = await site.getArticles();
+  const { info, articles } = await fetchWebsite({ site });
 
   const feed = new Feed({
     title: info.title,
