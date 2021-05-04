@@ -5,7 +5,7 @@ I created RSS feeds for my favorite websites because they are not providing them
 This repository has useful functions to make RSS feed for any websites easily.<br>
 You can fork this repository and get started to create your own RSS feed.
 
-## RSSified Websites
+## RSS feeds
 
 ### [TANO\*C STORE (New Items)](https://www.tanocstore.net/)
 
