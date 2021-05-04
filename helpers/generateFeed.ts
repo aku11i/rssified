@@ -1,4 +1,3 @@
-import type { Browser } from "puppeteer";
 import type { Site } from "../types";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
@@ -10,17 +9,15 @@ const DIST = path.resolve(process.cwd(), "dist");
 
 export type GenerateFeedProps = {
   site: Site;
-  browser: Browser;
 };
 
 export const generateFeed = async (props: GenerateFeedProps): Promise<void> => {
   console.log("[START]", props.site.url);
 
-  const { site, browser } = props;
-  const info = await site.getInfo({
-    browser,
-  });
-  const articles = await site.getArticles({ browser });
+  const { site } = props;
+
+  const info = await site.getInfo();
+  const articles = await site.getArticles();
 
   const feed = new Feed({
     title: info.title,

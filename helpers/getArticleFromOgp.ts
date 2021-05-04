@@ -2,7 +2,10 @@ import type { Article } from "../types";
 import { getOgp } from "./getOgp.js";
 import type { OpenGraphImage } from "open-graph-scraper";
 
-export const getArticleFromOgp = async (url: string): Promise<Article> => {
+export const getArticleFromOgp = async (
+  url: string,
+  date?: Date
+): Promise<Article> => {
   const ogp = await getOgp(url);
 
   const image = (ogp.ogImage as OpenGraphImage).url;
@@ -16,6 +19,6 @@ export const getArticleFromOgp = async (url: string): Promise<Article> => {
     description,
     image,
     link: url,
-    date: new Date(),
+    date: date ?? new Date(),
   };
 };

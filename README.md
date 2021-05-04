@@ -1,7 +1,7 @@
 # rssified
 
-## Sites
+## RSSified Web Sites
 
-### TANO\*C STORE
+### [TANO\*C STORE (New Item)](https://www.tanocstore.net/)
 
-https://aktriver.github.io/rssified/tanocstore.rss
+https://aktriver.github.io/rssified/tanocstore-new.rss

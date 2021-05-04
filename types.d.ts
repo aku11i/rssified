@@ -1,4 +1,4 @@
-import type { Browser } from "puppeteer";
+import type { Browser, Page } from "puppeteer";
 
 export type SiteInfo = {
   title: string;
@@ -15,21 +15,9 @@ export type Article = {
   date: Date;
 };
 
-export type GetInfoProps = {
-  browser: Browser;
-};
-
-export type GetLinksProps = {
-  browser: Browser;
-};
-
-export type GetArticlesProps = {
-  browser: Browser;
-};
-
 export type Site = {
   url: string;
   name: string;
-  getInfo: (props: GetInfoProps) => Promise<SiteInfo>;
-  getArticles: (props: GetArticlesProps) => Promise<Article[]>;
+  getInfo: () => Promise<SiteInfo>;
+  getArticles: () => Promise<Article[]>;
 };
