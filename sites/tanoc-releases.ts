@@ -24,29 +24,28 @@ const fetch: Site["fetch"] = async () => {
     copyright,
   };
 
-  const discElements = (await page.$$("article#disc div.digital")).filter(
-    (_, i) => i < DEFAULT_ARTICLE_LENGTH
-  );
+  const date = new Date();
+  const discElements = await page.$$("article#disc div.digital");
 
   const articles: Article[] = await Promise.all(
-    discElements.map(async (el) => {
-      const title = await el.$eval("h3 > a", getText);
-      const link = await el.$eval("a.jlink", getHref);
-      const image = await el.$eval("a.jlink > img", getSrc);
-      const description = `<img src="${image}">`;
+    discElements
+      .filter((_, i) => i < DEFAULT_ARTICLE_LENGTH)
+      .map(async (el) => {
+        const title = await el.$eval("h3 > a", getText);
+        const link = await el.$eval("a.jlink", getHref);
+        const image = await el.$eval("a.jlink > img", getSrc);
+        const description = `<img src="${image}">`;
 
-      const article: Article = {
-        title,
-        description,
-        link,
-        image,
-        date,
-      };
-      return article;
-    })
+        const article: Article = {
+          title,
+          description,
+          link,
+          image,
+          date,
+        };
+        return article;
+      })
   );
-
-  const date = new Date();
 
   await page.close();
   await browser.close();

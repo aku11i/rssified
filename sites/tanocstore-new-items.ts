@@ -25,8 +25,6 @@ const fetch: Site["fetch"] = async () => {
     copyright,
   };
 
-  await page.goto(SITE_URL);
-
   const links = await page.$$eval(
     "div.new td.lims tr.woong > td > a",
     getHrefs
