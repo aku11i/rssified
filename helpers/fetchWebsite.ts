@@ -16,8 +16,7 @@ export const fetchWebsite = async (
   const { site } = props;
 
   try {
-    const info = await site.getInfo();
-    const articles = await site.getArticles();
+    const { info, articles } = await site.fetch();
 
     return { info, articles };
   } catch (e) {

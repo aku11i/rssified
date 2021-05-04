@@ -1,5 +1,5 @@
 import { getHrefs, getPageInfo, getText } from "../lib/query.js";
-import type { Article, Site } from "../types";
+import type { Site, SiteInfo } from "../types";
 import { getSiteName } from "../helpers/getSiteName.js";
 import { getArticleFromOgp } from "../helpers/getArticleFromOgp.js";
 import { newBrowser, newPage } from "../lib/browser.js";
@@ -8,7 +8,7 @@ const SITE_NAME = getSiteName(import.meta.url);
 const SITE_URL = "https://www.tanocstore.net";
 const ORIGIN = new URL(SITE_URL).origin;
 
-const getInfo: Site["getInfo"] = async () => {
+const fetch: Site["fetch"] = async () => {
   const browser = await newBrowser();
   const page = await newPage(browser);
 
@@ -18,20 +18,12 @@ const getInfo: Site["getInfo"] = async () => {
 
   const copyright = await page.$eval("footer p.copyright", getText);
 
-  await page.close();
-  await browser.close();
-
-  return {
+  const info: SiteInfo = {
     title,
     description,
     link: SITE_URL,
     copyright,
   };
-};
-
-const getArticles: Site["getArticles"] = async () => {
-  const browser = await newBrowser();
-  const page = await newPage(browser);
 
   await page.goto(SITE_URL);
 
@@ -44,24 +36,20 @@ const getArticles: Site["getArticles"] = async () => {
 
   const date = new Date();
 
-  const articles: Article[] = [];
-
-  for (const _ of urls) {
-    const article = await getArticleFromOgp(_, date);
-    articles.push(article);
-  }
+  const articles = await Promise.all(
+    urls.map((_) => getArticleFromOgp(_, date))
+  );
 
   await page.close();
   await browser.close();
 
-  return articles;
+  return { info, articles };
 };
 
 const site: Site = {
   url: SITE_URL,
   name: SITE_NAME,
-  getInfo,
-  getArticles,
+  fetch,
 };
 
 export default site;

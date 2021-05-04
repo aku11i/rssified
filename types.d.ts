@@ -15,9 +15,13 @@ export type Article = {
   date: Date;
 };
 
+export type FetchResult = {
+  info: SiteInfo;
+  articles: Article[];
+};
+
 export type Site = {
   url: string;
   name: string;
-  getInfo: () => Promise<SiteInfo>;
-  getArticles: () => Promise<Article[]>;
+  fetch: () => Promise<FetchResult>;
 };
