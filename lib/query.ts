@@ -26,6 +26,6 @@ export const getSrc = (element: Element): string | undefined => {
   return element.getAttribute("src") ?? undefined;
 };
 
-export const getText = (element: Element): string | undefined => {
+export const getText = (element: Element): string => {
   return (element as HTMLElement).innerText ?? "";
 };
