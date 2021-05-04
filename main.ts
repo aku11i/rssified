@@ -4,20 +4,21 @@ import { generateFeed } from "./helpers/generateFeed.js";
 
 const queue = new PQueue({ concurrency: 1 });
 
-process.on("unhandledRejection", (reason: any) => {
-  console.error(reason);
-  process.exit(reason?.code || 1);
-});
-
 (async () => {
-  try {
-    const sites = await loadAllSites();
+  const sites = await loadAllSites();
 
-    await Promise.all(
-      sites.map((site) => queue.add(() => generateFeed({ site })))
-    );
-  } catch (e) {
-    console.error(e);
-    process.exit(e.code || 1);
+  const promises = sites.map((site) =>
+    queue
+      .add(() => generateFeed({ site }))
+      .catch((e) => {
+        console.error(e);
+        throw e;
+      })
+  );
+
+  const results = await Promise.allSettled(promises);
+
+  if (results.some((_) => _.status === "rejected")) {
+    process.exit(1);
   }
 })();
