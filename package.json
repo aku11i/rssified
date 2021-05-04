@@ -19,8 +19,8 @@
   },
   "scripts": {
     "dev": "node --loader ts-node/esm ./main.ts",
-    "build": "cross-env NODE_ENV=production node --loader ts-node/esm/transpile-only ./main.ts",
-    "tsc": "tsc",
+    "generate": "cross-env NODE_ENV=production node --loader ts-node/esm/transpile-only ./main.ts",
+    "build": "tsc",
     "lint": "eslint . --ignore-path .gitignore",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
