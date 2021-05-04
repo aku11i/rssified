@@ -19,7 +19,8 @@
   },
   "scripts": {
     "dev": "node --loader ts-node/esm ./main.ts",
-    "start": "cross-env NODE_ENV=production node --loader ts-node/esm/transpile-only ./main.ts",
+    "build": "cross-env NODE_ENV=production node --loader ts-node/esm/transpile-only ./main.ts",
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
