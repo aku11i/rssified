@@ -4,24 +4,30 @@ import { generateFeed } from "./helpers/generateFeed.js";
 import { fetchWebsite } from "./helpers/fetchWebsite.js";
 import { getAllSites } from "./helpers/getAllSites.js";
 import { printError } from "./helpers/printError.js";
+import { newBrowser } from "./lib/browser.js";
 
 const queue = new PQueue({ concurrency: 4 });
 
-const createTask = async (siteName: string) =>
-  queue.add(async () => {
-    try {
-      console.log("[START]", siteName);
-      const site = await loadSite(siteName);
-      const { info, articles } = await fetchWebsite({ site });
-      await generateFeed({ site, info, articles });
-      console.log("[FINISH]", siteName);
-    } catch (e) {
+const createTask = (siteName: string): Promise<void> =>
+  queue
+    .add(async () => {
+      const browser = await newBrowser();
+      try {
+        console.log("[START]", siteName);
+        const site = await loadSite(siteName);
+        const { info, articles } = await fetchWebsite({ site, browser });
+        await generateFeed({ site, info, articles });
+        console.log("[FINISH]", siteName);
+      } finally {
+        await browser.close();
+      }
+    })
+    .catch(async (e) => {
       console.error("[ERROR]", siteName);
       console.error(e);
       await printError(e).catch(() => undefined);
       throw e;
-    }
-  });
+    });
 
 (async () => {
   const [, , ...args] = process.argv;

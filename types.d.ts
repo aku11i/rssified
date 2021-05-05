@@ -1,3 +1,5 @@
+import type { Browser } from "puppeteer";
+
 export type SiteInfo = {
   title: string;
   description: string;
@@ -13,6 +15,10 @@ export type Article = {
   date: Date;
 };
 
+export type FetchProps = {
+  browser: Browser;
+};
+
 export type FetchResult = {
   info: SiteInfo;
   articles: Article[];
@@ -21,5 +27,5 @@ export type FetchResult = {
 export type Site = {
   url: string;
   name: string;
-  fetch: () => Promise<FetchResult>;
+  fetch: (props: FetchProps) => Promise<FetchResult>;
 };
