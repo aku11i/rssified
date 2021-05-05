@@ -4,7 +4,7 @@ import { generateFeed } from "./helpers/generateFeed.js";
 import { fetchWebsite } from "./helpers/fetchWebsite.js";
 import { getAllSites } from "./helpers/getAllSites.js";
 
-const queue = new PQueue({ concurrency: 1 });
+const queue = new PQueue({ concurrency: 4 });
 
 const createTask = async (siteName: string) =>
   queue.add(async () => {
