@@ -15,6 +15,7 @@ const createTask = async (siteName: string) =>
       await generateFeed({ site, info, articles });
       console.log("[FINISH]", siteName);
     } catch (e) {
+      console.error("[ERROR]", siteName);
       console.error(e);
       throw e;
     }
