@@ -21,13 +21,18 @@
     "dev": "node --loader ts-node/esm ./main.ts",
     "generate": "cross-env NODE_ENV=production node --loader ts-node/esm/transpile-only ./main.ts",
     "build": "tsc",
-    "lint": "eslint . --ignore-path .gitignore",
+    "prettier": "prettier . --ignore-path .gitignore",
+    "lint": "eslint . --ignore-path .gitignore && yarn prettier --check",
+    "fix": "yarn lint --fix && yarn prettier --write",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.ts": "eslint --fix",
-    "*.json": "prettier --write"
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,json,yml}": "prettier --write"
   },
   "dependencies": {
     "feed": "^4.2.2",
