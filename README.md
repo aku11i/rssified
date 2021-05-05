@@ -1,4 +1,4 @@
-# rssified
+# @aktriver/rssified
 
 [![build](https://github.com/aktriver/rssified/actions/workflows/build.yml/badge.svg)](https://github.com/aktriver/rssified/actions/workflows/build.yml)
 [![generate-feed](https://github.com/aktriver/rssified/actions/workflows/generate-feed.yml/badge.svg)](https://github.com/aktriver/rssified/actions/workflows/generate-feed.yml)
