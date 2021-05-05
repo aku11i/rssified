@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v0.3.0](https://github.com/aktriver/rssified/compare/v0.2.1..v0.3.0) 2021/05/05
+
+- Print error to log file [15951ff](https://github.com/aktriver/rssified/commit/15951ff318f38d3280537873f2d103ec41516b0b)
+- Improve browser management [055c21f](https://github.com/aktriver/rssified/commit/055c21f0f6449db748957e98b93db720af8f8291)
+
 ## [v0.2.1](https://github.com/aktriver/rssified/compare/v0.2.0..v0.2.1) 2021/05/05
 
 - Change package name [3e0d422](https://github.com/aktriver/rssified/commit/3e0d42261e383c61aadf04e24236f65ea0677a20)
