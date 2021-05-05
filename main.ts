@@ -9,11 +9,11 @@ const queue = new PQueue({ concurrency: 1 });
 const createTask = async (siteName: string) =>
   queue.add(async () => {
     try {
+      console.log("[START]", siteName);
       const site = await loadSite(siteName);
-      console.log("[START]", site.url);
       const { info, articles } = await fetchWebsite({ site });
       await generateFeed({ site, info, articles });
-      console.log("[FINISH]", site.url);
+      console.log("[FINISH]", siteName);
     } catch (e) {
       console.error(e);
       throw e;
