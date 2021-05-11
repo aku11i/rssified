@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron: "20,50 * * * *"
+    - cron: "47 * * * *"
 
 jobs:
   fetch:
