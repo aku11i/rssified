@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+* Stop deploying feeds to GitHub Pages
+* Deploy feeds to Netlify
+* yarn add --dev standard-version
 * Update CHANGELOG.md for standard-version ([79da479](https://github.com/aktriver/rssified/commit/79da47902a993465e039a36f877392235cd5c539))
 
 ## [0.3.0](https://github.com/aktriver/rssified/compare/v0.2.1..v0.3.0) (2021/05/05)
