@@ -33,7 +33,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{js,json,yml}": "prettier --write"
+    "*.{js,json,yml,md}": "prettier --write"
   },
   "dependencies": {
     "feed": "^4.2.2",
