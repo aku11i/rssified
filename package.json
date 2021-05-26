@@ -22,8 +22,9 @@
     "generate": "cross-env NODE_ENV=production node --loader ts-node/esm/transpile-only ./main.ts",
     "build": "tsc",
     "prettier": "prettier . --ignore-path .gitignore",
-    "lint": "eslint . --ignore-path .gitignore && yarn prettier --check",
-    "fix": "yarn lint --fix && yarn prettier --write",
+    "eslint": "eslint . --ignore-path .gitignore",
+    "lint": "yarn eslint && yarn prettier --check",
+    "fix": "yarn eslint --fix && yarn prettier --write",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
