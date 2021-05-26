@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/aktriver/rssified/compare/v0.4.0...v0.4.1) (2021-05-26)
+
+### Bug Fixes
+
+- Fix eslint fix command ([9e33957](https://github.com/aktriver/rssified/commit/9e33957a728aa881f91f61d8f9fd93a041114eff))
+- Format markdown file on commit ([474dcf5](https://github.com/aktriver/rssified/commit/474dcf53963e28031f1e644eaf77590e8b2e60c9))
+
 ## [0.4.0](https://github.com/aktriver/rssified/compare/v0.3.0...v0.4.0) (2021-05-26)
 
 ### Features
