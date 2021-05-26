@@ -12,11 +12,11 @@ You can fork this repository and get started to create your own RSS feed.
 
 ### [TANO\*C STORE (New Items)](https://www.tanocstore.net/)
 
-https://aktriver.github.io/rssified/tanocstore-new-items.rss
+https://rssified.akutagawa.dev/tanocstore-new-items.rss
 
 ### [TANO\*C RELEASES](http://www.tano-c.net/release/)
 
-https://aktriver.github.io/rssified/tanoc-releases.rss
+https://rssified.akutagawa.dev/tanoc-releases.rss
 
 ## Contributing
 
