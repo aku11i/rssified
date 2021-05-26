@@ -1,5 +1,14 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.4.0](https://github.com/aktriver/rssified/compare/v0.3.0...v0.4.0) (2021-05-26)
+
+
+### Features
+
+* Update CHANGELOG.md for standard-version ([79da479](https://github.com/aktriver/rssified/commit/79da47902a993465e039a36f877392235cd5c539))
+
 ## [0.3.0](https://github.com/aktriver/rssified/compare/v0.2.1..v0.3.0) (2021/05/05)
 
 ### Features
