@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/aktriver/rssified/compare/v0.4.1...v0.5.0) (2021-05-27)
+
+### Features
+
+- Actions: Deploy to netlify ([9c181c8](https://github.com/aktriver/rssified/commit/9c181c8060afae23feff61fe22da1515ecb388e1))
+- Add Netlify deploy status to README.md ([1a13665](https://github.com/aktriver/rssified/commit/1a13665620ff785e42315f8b7c5959271b56949b))
+
 ### [0.4.1](https://github.com/aktriver/rssified/compare/v0.4.0...v0.4.1) (2021-05-26)
 
 ### Bug Fixes
