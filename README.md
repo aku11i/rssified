@@ -23,7 +23,7 @@ https://rssified.akutagawa.dev/tanoc-releases.rss
 ### Setup
 
 ```sh
-yarn install --frozen-lockfile
+yarn install
 ```
 
 Recommended Node.js version is `16.x`.
