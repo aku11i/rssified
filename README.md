@@ -1,7 +1,7 @@
-# @aktriver/rssified
+# @aku11i/rssified
 
-[![build](https://github.com/aktriver/rssified/actions/workflows/build.yml/badge.svg)](https://github.com/aktriver/rssified/actions/workflows/build.yml)
-[![generate-feed](https://github.com/aktriver/rssified/actions/workflows/generate-feed.yml/badge.svg)](https://github.com/aktriver/rssified/actions/workflows/generate-feed.yml)
+[![build](https://github.com/aku11i/rssified/actions/workflows/build.yml/badge.svg)](https://github.com/aku11i/rssified/actions/workflows/build.yml)
+[![generate-feed](https://github.com/aku11i/rssified/actions/workflows/generate-feed.yml/badge.svg)](https://github.com/aku11i/rssified/actions/workflows/generate-feed.yml)
 
 I created RSS feeds for favorite websites because they are not providing them. 🥺
 
