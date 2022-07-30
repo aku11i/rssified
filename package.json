@@ -39,7 +39,7 @@
   "dependencies": {
     "feed": "^4.2.2",
     "open-graph-scraper": "^4.11.0",
-    "p-queue": "^7.1.0",
+    "p-queue": "^7.3.0",
     "puppeteer": "^11.0.0"
   },
   "devDependencies": {
