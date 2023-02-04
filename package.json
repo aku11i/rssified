@@ -40,7 +40,7 @@
     "feed": "^4.2.2",
     "open-graph-scraper": "^4.11.0",
     "p-queue": "^7.1.0",
-    "puppeteer": "^11.0.0"
+    "puppeteer": "^19.6.3"
   },
   "devDependencies": {
     "@types/open-graph-scraper": "^4.7.0",
