@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "feed": "^4.2.2",
-    "open-graph-scraper": "^4.11.0",
+    "open-graph-scraper": "^5.1.1",
     "p-queue": "^7.1.0",
     "puppeteer": "^11.0.0"
   },
